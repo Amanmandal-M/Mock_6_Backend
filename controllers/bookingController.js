@@ -6,7 +6,10 @@ const { bookingModel } = require("../models/bookingModel");
 
 const dashboardController = async (req,res) => {
     try {
-        
+        const data = await bookingModel.find();
+        res.status(200).send({
+            "Data" : data
+        })
     } catch (error) {
         res.status(404).send({
             "Error": error.message
@@ -17,8 +20,15 @@ const dashboardController = async (req,res) => {
 
 
 const bookingController = async (req, res) => {
+    const {userId , flightId} = req.body;
     try {
-        
+        const data = new bookingModel({user: userId , flight : flightId});
+        await data.save();
+
+        res.status(201).send*({
+            "Message": "Booked Successfully",
+            "Data": data
+        })
     } catch (error) {
         res.status(404).send({
             "Error": error.message
@@ -28,9 +38,4 @@ const bookingController = async (req, res) => {
 }
 
 
-module.exports = { dashboardController , bookingController }
-
-// | METHOD | ENDPOINT | DESCRIPTION | STATUS CODE |
-
-// | POST | /api/booking |  | 201 |
-// | GET | /api/dashboard |  | 200 |
+module.exports = { dashboardController , bookingController };
