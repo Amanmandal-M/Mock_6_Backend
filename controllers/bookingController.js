@@ -25,7 +25,7 @@ const bookingController = async (req, res) => {
         const data = new bookingModel({user: userId , flight : flightId});
         await data.save();
 
-        res.status(201).send*({
+        res.status(201).send({
             "Message": "Booked Successfully",
             "Data": data
         })
