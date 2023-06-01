@@ -6,7 +6,7 @@ const { bookingModel } = require("../models/bookingModel");
 
 const dashboardController = async (req,res) => {
     try {
-        const data = await bookingModel.find();
+        const data = await bookingModel.find().populate('user').populate('flight')
         res.status(200).send({
             "Data" : data
         })
