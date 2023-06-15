@@ -334,7 +334,7 @@
  * @swagger
  * tags:
  *   name: Booking
- *   description: Flight API Endpoints
+ *   description: Booking API Endpoints
  */
 
 // GET all Bookings
