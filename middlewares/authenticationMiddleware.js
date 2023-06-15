@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const authentication = (req, res, next) => {
   try {
-    const normalToken = req.cookies.Normal_Token || "";
+    const normalToken = req.headers.authorization || "";
 
     // Verify the token
     jwt.verify(normalToken, process.env.NORMAL_KEY, (err, decoded) => {

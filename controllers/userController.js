@@ -5,6 +5,7 @@ require('dotenv').config();
 // Model Location
 const { userModel } = require("../models/userModel");
 
+
 const registerController = async (req,res) => {
     const { name,email,password } = req.body;
     try {
@@ -51,8 +52,6 @@ const loginController = async (req, res) => {
             if(!result) return res.status(404).json("login failed");
             else{
                 const Normal_Token = jwt.sign({"masai":"masai"}, process.env.NORMAL_KEY,{expiresIn:"7d"});
-                
-                res.cookie("Normal_Token", Normal_Token);
 
                 res.status(201).send({
                     "Message":"Login successful",
