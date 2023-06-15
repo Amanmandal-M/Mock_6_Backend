@@ -71,6 +71,16 @@ Note:
 
 <br>
 
+## Swagger API documentation and Schemas
+
+<strong>
+<h2>
+<a href="hhttps://air-ticket-booking-vn6t.onrender.com/api-docs/" target="_blank">Swagger</a>
+</h2>
+</strong>
+
+<br>
+
 ## Schema Design
 
 <br>
